@@ -10,7 +10,7 @@ body {
     width: 40%;
 }
 
-.cont2{
+.cont2 {
     text-align: center;
     margin: 0 auto;
     width: 50%;
@@ -26,7 +26,7 @@ p {
     font-size: 1.5rem;
 }
 
-.btn-start, .btn-newCard{
+.btn-start, .btn-newCard, .sumbit-btn {
     font-size: 1.3rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
@@ -38,14 +38,109 @@ p {
     cursor: pointer;
     min-width: 15rem;
 }
+
+
 .btn-newCard{
     margin-top: 1rem;
 }
-.btn-start:hover, .btn-newCard:hover{
+.sumbit-btn{
+    margin-top: 3rem;
+}
+
+.btn-start:hover, .btn-newCard:hover, .sumbit-btn:hover {
     background-color: rgb(230, 197, 54);
     transition: all .2s ease;
     transform: scale(1.2);
 }
-.btn-start:active, .btn-newCard:active{
+
+.btn-start:active, .btn-newCard:active, .sumbit-btn:active {
     background-color: rgb(179, 153, 39);
 }
+
+.name-empty{
+    color: red;
+    font-size: 1rem;
+    padding-left: 2rem;
+
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    transition: 100ms ease-in-out;
+    width: 60%;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.modal.unactive {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+input{
+    border-radius: 5px;
+    border-color: rgb(233, 233, 233);
+}
+
+
+.close-btn {
+    border: none;
+    color: red;
+    height: 1rem;
+    border-radius: 50px;
+    background: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    max-height: 2rem;
+    justify-content: space-between;
+}
+
+.title{
+    color: rgb(204, 169, 15);
+}
+
+.modal-body {
+    padding: 1rem 2rem;
+    color: black;
+}
+
+#overlay {
+    position: fixed;
+    /* opacity: ; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 100ms ease-in-out;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#overlay.unactive {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+
+@media(min-width:610px){
+    .modal{
+        text-align: center;
+    }
+
+    
+}
+

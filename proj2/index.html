@@ -20,8 +20,27 @@
     <div class="cont2">
         <button class="btn-start" onclick="startGame()">Iniciar</button>
         <button class="btn-newCard" onclick="addCard()">Nova Carta</button>
+    </div>
+    <div class="container">
+        <p id="player-el"></p>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <h2 class="title">Digite seu nome para jogar:</h2>
+            <button class="close-btn" onclick="closePopUp()">&times;</button>
+        </div>
+        <p class="name-empty"></p>
+        <div class="modal-body">
+            <div>
+                Nome:
+                <input placeholder="Digite Aqui" type="text" class="nameInput">
+
+            </div>
+            <button onclick="nameSubmit()" class="sumbit-btn">Estou Pronto</button>
+        </div>
 
     </div>
+    <div id="overlay"></div>
 
     <script src="./index.js"></script>
 </body>
