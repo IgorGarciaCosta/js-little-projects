@@ -1,0 +1,51 @@
+body {
+    background-image: url("./images/table.png");
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2rem;
+    width: 40%;
+}
+
+.cont2{
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+h1 {
+    font-size: 3rem;
+    color: rgb(204, 169, 15);
+}
+
+p {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.btn-start, .btn-newCard{
+    font-size: 1.3rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    background-color: rgb(204, 169, 15);
+    color: rgb(16, 107, 16);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    min-width: 15rem;
+}
+.btn-newCard{
+    margin-top: 1rem;
+}
+.btn-start:hover, .btn-newCard:hover{
+    background-color: rgb(230, 197, 54);
+    transition: all .2s ease;
+    transform: scale(1.2);
+}
+.btn-start:active, .btn-newCard:active{
+    background-color: rgb(179, 153, 39);
+}
