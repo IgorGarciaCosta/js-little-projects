@@ -1,5 +1,5 @@
 let firstCard
-let cards = []
+let cards
 let hasBJ = false;
 let isAlive = false
 let message = '' 
@@ -25,7 +25,6 @@ const popUp = document.querySelector(".modal")
 
 function nameSubmit(){
     if(document.querySelector(".nameInput").value == ""){
-        console.log("aa")
         nameEmpty.textContent = "Por favor, adote um nome"
     }
     else{
@@ -49,12 +48,18 @@ function closePopUp(){
 }
 
 function startGame(){
-    firstCard = getRandomCard()
-    isAlive = true
-    cards = [firstCard]
-    sum = firstCard
-    renderGame();
+    if(!isAlive){
+        firstCard = getRandomCard()
+        isAlive = true
+        cards = []
+        cards = [firstCard]
+        sum = firstCard
+        renderGame();
+    }
+    
 }
+
+
 
 function renderGame(){
     cardEl.textContent ="Cartas: ";
@@ -71,6 +76,7 @@ function renderGame(){
     else if(sum === 21){
         message ="Uou! ganhou o blackjack!"
         sumEl.textContent =("Soma: "+sum);
+        isAlive = false
         hasBJ=true;
     }
     
