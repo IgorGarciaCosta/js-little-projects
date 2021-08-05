@@ -12,7 +12,7 @@ var storedLeads = JSON.parse(localStorage.getItem("myLeads"));
 
 if(storedLeads){
     myLeads = storedLeads
-    renderLeads()
+    render(myLeads)
 }
 
 
@@ -21,29 +21,29 @@ inputBtn.addEventListener("click", handler)
 deleteBtn.addEventListener("click", handleDelete)
 
 
-//buttons functions
+//buttons functions (handlers)
 function handleDelete(){
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    render(myLeads)
 }
 function handler(){
     myLeads.push(inputEl.value)
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     inputEl.value = ""
-    renderLeads()
+    render(myLeads)
     console.log(myLeads)
 }
 
 
 //other functions
-function renderLeads(){
+function render(leads){
     
-    for(let i =0;i<myLeads.length;i++){
+    for(let i =0;i<leads.length;i++){
         listItems+=`
         <li>
-            <a href='${myLeads[i]}' target='_blank'>
-                 ${myLeads[i]}
+            <a href='${leads[i]}' target='_blank'>
+                 ${leads[i]}
             </a>
         </li>`
     }
