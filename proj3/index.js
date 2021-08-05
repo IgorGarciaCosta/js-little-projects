@@ -1,9 +1,13 @@
 const inputBtn = document.querySelector("#input-btn")
 const deleteBtn = document.querySelector("#delete-btn")
+const tabBtn = document.querySelector("#save-tab-btn")
 let myLeads =[]
 const inputEl = document.querySelector("#input-el")
 const ulEl = document.querySelector("#ul-el")
 let listItems = ''
+const tabs = [
+    {url:"www.pingas.com"}
+]
 
 
 
@@ -19,6 +23,7 @@ if(storedLeads){
 //buttons listeners
 inputBtn.addEventListener("click", handler)
 deleteBtn.addEventListener("click", handleDelete)
+tabBtn.addEventListener("click", handleTab)
 
 
 //buttons functions (handlers)
@@ -33,6 +38,14 @@ function handler(){
     inputEl.value = ""
     render(myLeads)
     console.log(myLeads)
+}
+function handleTab(){
+    chrome.tabs.query({active:true, currentWindow:true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+    })
+    
 }
 
 

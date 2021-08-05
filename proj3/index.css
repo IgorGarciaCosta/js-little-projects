@@ -15,8 +15,9 @@ body{
     border-color: green;
 }
 
-#input-btn {
+#input-btn, #save-tab-btn {
     margin-top: 1rem;
+    margin-right: .5rem;
     background-color: rgb(62, 175, 62);
     border: none;
     padding: .7rem 1rem;
@@ -26,6 +27,7 @@ body{
     cursor: pointer;
 }
 #delete-btn{
+    margin-top: 1rem;
     font-weight: bold;
     color: #5f9341;
     border-color: #5f9341;
@@ -36,7 +38,7 @@ body{
     padding: .6rem 1rem;
 }
 
-#input-btn:hover, #delete-btn:hover {
+#input-btn:hover, #delete-btn:hover, #save-tab-btn:hover{
     background-color: rgb(140, 206, 140);
     transition: all .1s ease;
     transform: scale(1.05);
